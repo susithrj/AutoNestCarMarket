@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: autonest-api
+  datasource:
+    url: jdbc:mysql://mysql:3306/autonest?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: autonest
+    password: autonest123
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+
+autonest:
+  cors:
+    allowed-origins:
+      - http://localhost:4200
+  auth:
+    cookie:
+      secure: false
+      same-site: Strict
+  upload-dir: /data/uploads

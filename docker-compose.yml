@@ -1,0 +1,45 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: autonest
+      MYSQL_USER: autonest
+      MYSQL_PASSWORD: autonest123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  autonest-api:
+    build:
+      context: ./autonest-api
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      AUTONEST_UPLOAD_DIR: /data/uploads
+      AUTONEST_CORS_ALLOWED_ORIGINS: http://localhost:4200
+      AUTONEST_JWT_SECRET: dev-secret-change-me-dev-secret-change-me
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    volumes:
+      - uploads_data:/data/uploads
+
+  autonest-ui:
+    build:
+      context: ./autonest-ui
+    depends_on:
+      - autonest-api
+    ports:
+      - "4200:80"
+
+volumes:
+  mysql_data:
+  uploads_data:
