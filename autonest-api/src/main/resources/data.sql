@@ -42,8 +42,8 @@ VALUES
    198000.00, 1500.00, 0.00, true, 'Dubai', '+971504331100', 'patrol.nissan@example.com', 'Full option, desert-ready, agency service history.', 'AVAILABLE', NULL, NOW(), NOW()),
   (1006, 1, 'Mercedes-AMG G63 2022', 'Mercedes-Benz', 'G-Class G63', 2022, 240000, 'PETROL', 'AUTOMATIC',
    685000.00, 0.00, 25000.00, false, 'Abu Dhabi', '+971505992211', 'g63.amg@example.com', 'AMG Night package, low mileage, showroom condition.', 'AVAILABLE', NULL, NOW(), NOW()),
-  (1007, 1, 'BMW M6 Gran Coupe 2020', 'BMW', 'M6 Gran Coupe', 2020, 132000, 'PETROL', 'AUTOMATIC',
-   245000.00, 800.00, 0.00, true, 'Dubai', '+971506114433', 'm6.bmw@example.com', 'V8 twin-turbo, carbon trim, full BMW service records.', 'AVAILABLE', NULL, NOW(), NOW())
+  (1007, 1, 'BMW M5 2020', 'BMW', 'M5 Competition', 2020, 132000, 'PETROL', 'AUTOMATIC',
+   245000.00, 800.00, 0.00, true, 'Dubai', '+971506114433', 'm5.bmw@example.com', 'V8 twin-turbo, carbon trim, full BMW service records.', 'AVAILABLE', NULL, NOW(), NOW())
 ON DUPLICATE KEY UPDATE
   title = VALUES(title),
   brand = VALUES(brand),
@@ -74,7 +74,7 @@ VALUES
   (2004, 1004, 'https://img.philkotse.com/2024/12/05/DN77gTEr/img-1968-2-copy-079f_wm.webp', true, 1, NOW()),
   (2005, 1005, 'https://www.autodeal.com.ph/custom/blog-post/header/i-finally-understand-why-the-nissan-patrol-is-number-1-in-the-deserts-of-dubai-66f35555be66f.jpeg', true, 1, NOW()),
   (2006, 1006, 'https://veluxrentals.com/wp-content/uploads/2024/09/IMG_9224.jpg', true, 1, NOW()),
-  (2007, 1007, 'https://cimg3.ibsrv.net/ibimg/hgm/1920x1080-1/100/749/2021-bmw-5-series_100749427.jpg', true, 1, NOW())
+  (2007, 1007, 'https://www.exoticshunter.com/imagetag/233/main/l/Used-2019-BMW-M5-Competition-VERY-RARE-Rosso-Corsa-Executive-Pack-+-Carbon-Upgrades!-1691604883.jpg', true, 1, NOW())
 ON DUPLICATE KEY UPDATE
   car_id = VALUES(car_id),
   image_url = VALUES(image_url),
