@@ -1,3 +1,4 @@
+/*
 package com.autonest.config;
 
 import java.nio.file.Path;
@@ -21,3 +22,4 @@ public class UploadsWebConfig implements WebMvcConfigurer {
   }
 }
 
+*/
