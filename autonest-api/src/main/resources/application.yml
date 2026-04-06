@@ -41,7 +41,11 @@ autonest:
       secure: false
       same-site: Strict
   upload-dir: uploads
+  tax:
+    vat: 5%
 
 logging:
   level:
     org.hibernate.SQL: warn
+
+

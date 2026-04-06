@@ -30,3 +30,5 @@ autonest:
       secure: false
       same-site: Strict
   upload-dir: /data/uploads
+
+  tax: 5
